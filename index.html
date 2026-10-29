@@ -3,234 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Dr. Carlos M. Advogado Trabalhista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/Hero-bg.webp" fetchpriority="high">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Kaisei+Opti&family=PT+Serif:wght@400;700&display=swap">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="whatsapp">
-    <a href="https://api.whatsapp.com/send?phone=+919958082320&text=Hello%20Web%20Full%20Stacks%20%20would%20like%20to%20know%20more%20details%20about%20your%20products%2C%20Please%20send%20more%20details." target="_blank" id="toggle1" class="wtsapp">
-      <img src="assets/whatsapp.svg" style="height: 30px; filter: invert(1);">
-    </a>
-  </div>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
   <header id="header">
-      <div class="header">
-        <img src="assets/logo.svg" alt="Logo" class="logo-header"> 
-        <div class="header-links">
-          <a href="#Home">Início</a>
-          <a href="#Services">Serviços</a>
-          <a href="#About">Sobre</a>
-          <a href="#Testimonials">Depoimentos</a>
-          <a href="#Contact">Contato</a>
-        </div>
-        <button type="button" class="header-menu" onclick="toggleMenu()">
-          <img src="assets/menu.svg" alt="Menu">
-        </button>
-      </div>
-      <div class="menu-mobile">
-        <a href="#Home" onclick="toggleMenu()">Início</a>
-        <a href="#Services" onclick="toggleMenu()">Serviços</a>
-        <a href="#About" onclick="toggleMenu()">Sobre</a>
-        <a href="#Testimonials" onclick="toggleMenu()">Depoimentos</a>
-        <a href="#Contact" onclick="toggleMenu()">Contato</a>
-      </div>
+    <div class="header">
+      <a class="logo-link" href="#Home">
+        <img src="assets/logo.svg" alt="Dr. Carlos M., advogado trabalhista" class="logo-header" width="226" height="187" decoding="async">
+      </a>
+      <nav class="header-links" aria-label="Seções da página">
+        <a href="#Home">Início</a>
+        <a href="#Services">Serviços</a>
+        <a href="#About">Sobre</a>
+        <a href="#Testimonials">Depoimentos</a>
+        <a href="#Contact">Contato</a>
+      </nav>
+      <button type="button" class="header-menu" aria-expanded="false" aria-controls="menu-mobile" aria-label="Abrir menu">
+        <img src="assets/menu.svg" alt="" width="33" height="33" decoding="async">
+      </button>
+    </div>
+    <nav id="menu-mobile" class="menu-mobile" aria-label="Seções da página" inert>
+      <a href="#Home">Início</a>
+      <a href="#Services">Serviços</a>
+      <a href="#About">Sobre</a>
+      <a href="#Testimonials">Depoimentos</a>
+      <a href="#Contact">Contato</a>
+    </nav>
   </header>
-  <main>
-    <section id="Home">
+
+  <main id="conteudo" tabindex="-1">
+    <section id="Home" tabindex="-1">
+      <img class="hero-media" src="assets/Hero-bg.webp" alt="" width="1267" height="844" decoding="async" fetchpriority="high">
       <h1>Dr. Carlos M.</h1>
       <h2>Advogado Trabalhista</h2>
       <p>Seus direitos trabalhistas têm prazo para ser reclamados.</p>
     </section>
-    <section class="accordion">
+
+    <section class="accordion" aria-labelledby="faq-title">
+      <h2 id="faq-title" class="visually-hidden">Perguntas frequentes</h2>
       <div class="questions">
 
-        <div id="question1" class="question">
+        <div class="question">
           <div class="content">
-            <span>Você acredita que seus direitos trabalhistas não foram respeitados?</span>
-            <button onclick="toggleQuestion(0)">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q1imgmais"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <path
-                  d="M12.11 7.93001H8V11.965H7.25V7.93001H3.155V7.19501H7.25V3.26501H8V7.19501H12.11V7.93001Z"
-                  fill="white"
-                />
-              </svg>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q1imgmenos"
-                style="display: none;"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <rect
-                  x="3.5"
-                  y="7"
-                  width="8"
-                  height="1"
-                  rx="0.5"
-                  fill="white"
-                />
-              </svg>
+            <button type="button" id="pergunta-1" aria-expanded="false" aria-controls="resposta-1">
+              <span>Você acredita que seus direitos trabalhistas não foram respeitados?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="response">
+          <div class="response" id="resposta-1" role="region" aria-labelledby="pergunta-1" inert>
             <p>Se você suspeita que algum direito não foi cumprido, como pagamento de horas extras, verbas rescisórias ou registro em carteira, é importante buscar orientação jurídica para analisar a situação.</p>
           </div>
         </div>
 
-        <div id="question2" class="question">
+        <div class="question">
           <div class="content">
-            <span>Fui demitido e tenho dúvidas sobre minha rescisão. O que posso fazer?</span>
-            <button onclick="toggleQuestion(1)">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q2imgmais"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <path
-                  d="M12.11 7.93001H8V11.965H7.25V7.93001H3.155V7.19501H7.25V3.26501H8V7.19501H12.11V7.93001Z"
-                  fill="white"
-                />
-              </svg>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q2imgmenos"
-                style="display: none;"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <rect
-                  x="3.5"
-                  y="7"
-                  width="8"
-                  height="1"
-                  rx="0.5"
-                  fill="white"
-                />
-              </svg>
+            <button type="button" id="pergunta-2" aria-expanded="false" aria-controls="resposta-2">
+              <span>Fui demitido e tenho dúvidas sobre minha rescisão. O que posso fazer?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="response">
+          <div class="response" id="resposta-2" role="region" aria-labelledby="pergunta-2" inert>
             <p>Nem sempre todos os valores são pagos corretamente no momento da demissão. Eu como advogado trabalhista posso analisar sua rescisão e verificar se todos os seus direitos foram respeitados.</p>
           </div>
-        </div> 
+        </div>
 
-        <div id="question3" class="question">
+        <div class="question">
           <div class="content">
-            <span>Trabalhei sem carteira assinada. Ainda tenho direitos?</span>
-            <button onclick="toggleQuestion(2)">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q3imgmais"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <path
-                  d="M12.11 7.93001H8V11.965H7.25V7.93001H3.155V7.19501H7.25V3.26501H8V7.19501H12.11V7.93001Z"
-                  fill="white"
-                />
-              </svg>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q3imgmenos"
-                style="display: none;"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <rect
-                  x="3.5"
-                  y="7"
-                  width="8"
-                  height="1"
-                  rx="0.5"
-                  fill="white"
-                />
-              </svg>
+            <button type="button" id="pergunta-3" aria-expanded="false" aria-controls="resposta-3">
+              <span>Trabalhei sem carteira assinada. Ainda tenho direitos?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="response">
+          <div class="response" id="resposta-3" role="region" aria-labelledby="pergunta-3" inert>
             <p>Sim. Mesmo sem registro formal, o trabalhador pode ter direito ao reconhecimento de vínculo empregatício e aos benefícios previstos pela legislação trabalhista.</p>
           </div>
-        </div> 
+        </div>
 
-        <div id="question4" class="question">
+        <div class="question">
           <div class="content">
-            <span>Posso entrar com uma ação trabalhista contra a empresa?</span>
-            <button onclick="toggleQuestion(3)">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q4imgmais"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <path
-                  d="M12.11 7.93001H8V11.965H7.25V7.93001H3.155V7.19501H7.25V3.26501H8V7.19501H12.11V7.93001Z"
-                  fill="white"
-                />
-              </svg>
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                id="q4imgmenos"
-                style="display: none;"
-              >
-                <circle cx="7.5" cy="7.5" r="7.5" fill="#191D32" />
-
-                <rect
-                  x="3.5"
-                  y="7"
-                  width="8"
-                  height="1"
-                  rx="0.5"
-                  fill="white"
-                />
-              </svg>
+            <button type="button" id="pergunta-4" aria-expanded="false" aria-controls="resposta-4">
+              <span>Posso entrar com uma ação trabalhista contra a empresa?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="response">
+          <div class="response" id="resposta-4" role="region" aria-labelledby="pergunta-4" inert>
             <p>Depende da situação. Cada caso precisa ser analisado individualmente para verificar se houve descumprimento da legislação trabalhista e quais medidas podem ser tomadas.</p>
           </div>
         </div>
 
-      </div>        
-        
+      </div>
     </section>
-    <section id="Services" class="services">
+
+    <section id="Services" class="services" tabindex="-1">
       <div class="section-title">
         <h2>Áreas de atuação</h2>
         <p>Conheça meus serviços</p>
@@ -302,7 +175,7 @@
       </div>
     </section>
 
-    <section id="About" class="about">
+    <section id="About" class="about" tabindex="-1">
       <div class="section-title">
         <h2>Sobre Dr. Carlos</h2>
         <p>Conheça minha formação, experiência e atuação</p>
@@ -351,7 +224,7 @@
       </div>
     </section>
 
-    <section id="Testimonials" class="testimonials">
+    <section id="Testimonials" class="testimonials" tabindex="-1">
       <div class="section-title">
         <h2>Depoimentos</h2>
         <p>Comentários sobre meu trabalho</p>
@@ -395,16 +268,17 @@
 
       </div>
     </section>
-    <section id="Contact" class="contact">
+
+    <section id="Contact" class="contact" tabindex="-1">
       <div class="section-title">
         <h2>Meu Contato</h2>
         <p>Entre em contato comigo</p>
       </div>
 
       <div class="contact-content">
-        
+
         <div class="contact-brand">
-          <img src="assets/logo.svg" alt="Dr. Carlos Mendes">
+          <img src="assets/logo.svg" alt="Logotipo de Dr. Carlos M." width="226" height="187" decoding="async">
         </div>
 
         <div class="contact-text">
@@ -413,23 +287,27 @@
             meus serviços, entre em contato. Estou pronto para analisar seu caso.
           </p>
 
-          <a href="https://wa.me/5500000000000" target="_blank" class="contact-btn">
+          <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Dr.%20Carlos.%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20direito%20trabalhista." target="_blank" rel="noopener noreferrer" class="contact-btn">
             Contato via WhatsApp
           </a>
         </div>
-
-
 
       </div>
     </section>
 
   </main>
+
   <footer class="footer">
     <p>
       © 2026 Rafael Silva. Todos os direitos reservados.
       Este site foi desenvolvido como projeto de estudo.
     </p>
   </footer>
-  <script src="script.js"></script>
+
+  <div id="whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=%2B919958082320&amp;text=Ol%C3%A1%2C%20Dr.%20Carlos.%20Gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20direito%20trabalhista." target="_blank" rel="noopener noreferrer" class="wtsapp" aria-label="Falar com Dr. Carlos no WhatsApp">
+      <img src="assets/whatsapp.svg" alt="" width="30" height="30" decoding="async">
+    </a>
+  </div>
 </body>
 </html>
